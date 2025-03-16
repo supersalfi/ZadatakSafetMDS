@@ -15,6 +15,9 @@ const accountHelper = {
     cy.get(this.elements.usernameField).type(username);
     cy.get(this.elements.passwordField).type(password);
     cy.get(".btn").contains("Sign In").click();
+    cy.get(".toast-body").contains(
+        "Logged in as " + username);
+
   },
   fillRegistrationForm({ username, password }) {
     if (username === "Admin") {
@@ -30,7 +33,7 @@ const accountHelper = {
         cy.get(".toast-body").contains(
           new RegExp(`Logged in as ${username} with password \\w+`)
         );
-        //(            'Logged in as '+ username + ' with password ')
+    
       } else {
         if (username === undefined) {
           cy.get(this.elements.passwordField).type(password);
