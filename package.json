@@ -1,0 +1,28 @@
+{
+  "name": "zadataksafetmds",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/supersalfi/ZadatakSafetMDS.git"
+  },
+  "author": "supersalfi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/supersalfi/ZadatakSafetMDS/issues"
+  },
+  "homepage": "https://github.com/supersalfi/ZadatakSafetMDS#readme",
+  "devDependencies": {
+    "@cypress/webpack-preprocessor": "^6.0.2",
+    "cypress": "^14.2.0",
+    "webpack": "^5.75.0"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.6.0",
+    "webpack": "^5.75.0"
+  }
+}
