@@ -17,16 +17,12 @@ const accountHelper = {
   },
 
   selectManufacturer(Manufacturer) {
-    cy.intercept("/api/dcim/manufacturers/?brief=true&limit=100").as(
-      "waitRequest"
-    );
     cy.intercept("/api/dcim/manufacturers/?brief=true&limit=100&q=*").as(
       "loadManufacturerResultList"
     );
     cy.get(":nth-child(2) > .col > .d-flex > .ts-wrapper > .ts-control").type(
       Manufacturer
     );
-    //cy.wait("@waitRequest");
     cy.wait("@loadManufacturerResultList");
 
     cy.get("#id_manufacturer-ts-dropdown .active").click();
@@ -208,9 +204,9 @@ const accountHelper = {
       .then(($row) => {
         cy.wrap($row).find("td").eq(1).find("a").click();
       });
-      cy.get('.btn-red').click()
-      cy.get('.btn-danger').click()
-      cy.get(".toast-body").contains("Deleted device " + deviceName);
+    cy.get(".btn-red").click();
+    cy.get(".btn-danger").click();
+    cy.get(".toast-body").contains("Deleted device " + deviceName);
   },
 };
 

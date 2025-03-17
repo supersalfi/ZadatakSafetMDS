@@ -7,10 +7,9 @@ let deviceName = strings.randomString(7),
   serialNumber = strings.randomString(12),
   rackPosition;
 
-describe("example to-do app", () => {
+describe("Delete devices test", () => {
   it("add decomissioned device to be deleted", () => {
     rackPosition = 20;
-    cy.log(deviceName);
     cy.visit("/dcim/racks/39/");
     loginPages.fillLogInForim("admin", "admin");
     rackHelper.goToAddDeviceForSPecificPosition(rackPosition);
@@ -25,19 +24,19 @@ describe("example to-do app", () => {
     rackHelper.selectPosition(rackPosition);
     rackHelper.selectStatus("decommissioning");
     rackHelper.submitDevice(deviceName, assetTag);
-    cy.log(deviceName);
+    
   });
 
-  it("add decomissioned device to be deleted", () => {
+  it("find added device in device list, mark it and delete it", () => {
     cy.visit("/dcim/devices/");
     loginPages.fillLogInForim("admin", "admin");
-    cy.log(deviceName);
+    
     deviceHelper.findDevicefromDeviceListandDeletedIt(deviceName);
   });
 
-  it.only("add decomissioned device to be deleted", () => {
+  it("add decomissioned device to be deleted", () => {
     rackPosition = 20;
-    cy.log(deviceName);
+    
     cy.visit("/dcim/racks/39/");
     loginPages.fillLogInForim("admin", "admin");
     rackHelper.goToAddDeviceForSPecificPosition(rackPosition);
@@ -52,13 +51,13 @@ describe("example to-do app", () => {
     rackHelper.selectPosition(rackPosition);
     rackHelper.selectStatus("decommissioning");
     rackHelper.submitDevice(deviceName, assetTag);
-    cy.log(deviceName);
+   
   });
 
-  it.only("add decomissioned device to be deleted", () => {
+  it("find decomissioned deviceopen device page and delete it", () => {
     cy.visit("/dcim/devices/");
     loginPages.fillLogInForim("admin", "admin");
-    cy.log(deviceName);
+    c
     deviceHelper.FindDeviceFromDeviceListAndDeleteItFromDevicePage(deviceName);
   });
 });

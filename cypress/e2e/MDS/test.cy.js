@@ -1,10 +1,8 @@
 import loginPages from "../Helpers/accountHelper";
 import strings from "../../fixtures/strings.js";
 
-describe("example to-do app", () => {
+describe("tests for log in and create account functionalities", () => {
   let username, password;
-
-  beforeEach(() => {});
 
   it("test log in of non existing account", () => {
     cy.visit("/login");

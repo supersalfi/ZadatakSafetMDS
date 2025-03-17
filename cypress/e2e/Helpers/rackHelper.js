@@ -19,8 +19,6 @@ const rackHelper = {
     cy.visit(
       "https://demo.netbox.dev/dcim/devices/add/?site=24&location=&rack=39&face=front&position=${position}"
     );
-
-    cy.log(position);
   },
 
   enterName(deviceName) {

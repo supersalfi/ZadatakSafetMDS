@@ -4,7 +4,7 @@ import strings from "../../fixtures/strings.js";
 import rackHelper from "../Helpers/rackHelper.js";
 let deviceName,assetTag,serialNumber,rackPosition;
 
-describe("example to-do app", () => {
+describe("Create device type tests", () => {
   it("Create new device type", () => {
     deviceName = strings.randomString(7);
     assetTag = strings.randomString(10);

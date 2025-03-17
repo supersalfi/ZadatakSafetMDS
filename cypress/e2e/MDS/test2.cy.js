@@ -4,7 +4,7 @@ import strings from "../../fixtures/strings.js";
 let model = strings.randomString(5);
 let slug = strings.randomString(7);
 
-describe("example to-do app", () => {
+describe("Tests for adding device types", () => {
   it("Create new device type", () => {
     cy.visit("/dcim/device-types/add/");
     loginPages.fillLogInForim("admin", "admin");
@@ -16,7 +16,7 @@ describe("example to-do app", () => {
     deviceHelper.selectTags("Golf");
     deviceHelper.defineHeight("2", "True", "False");
     deviceHelper.enterPartNumber("part number");
-    // deviceHelper.selectStatus('Parent')
+    deviceHelper.selectStatus('Parent')
     deviceHelper.selectAirflow("Front to rear");
     deviceHelper.enterWeight(200);
     deviceHelper.weightUnit("Ounces");
@@ -35,7 +35,7 @@ describe("example to-do app", () => {
     deviceHelper.selectTags("Golf");
     deviceHelper.defineHeight("2", "True", "False");
     deviceHelper.enterPartNumber("part number");
-    // deviceHelper.selectStatus('Parent')
+    deviceHelper.selectStatus('Parent')
     deviceHelper.selectAirflow("Front to rear");
     deviceHelper.enterWeight(200);
     deviceHelper.weightUnit("Ounces");
@@ -56,7 +56,7 @@ describe("example to-do app", () => {
     deviceHelper.selectTags("Golf");
     deviceHelper.defineHeight("2", "True", "False");
     deviceHelper.enterPartNumber("part number");
-    // deviceHelper.selectStatus('Parent')
+    deviceHelper.selectStatus('Parent')
     deviceHelper.selectAirflow("Front to rear");
     deviceHelper.enterWeight(200);
     deviceHelper.weightUnit("Ounces");
@@ -78,7 +78,7 @@ describe("example to-do app", () => {
     deviceHelper.selectTags("Golf");
     deviceHelper.defineHeight("2", "True", "False");
     deviceHelper.enterPartNumber("part number");
-    // deviceHelper.selectStatus('Parent')
+    deviceHelper.selectStatus('Parent')
     deviceHelper.selectAirflow("Front to rear");
     deviceHelper.enterWeight(200);
     deviceHelper.weightUnit("Ounces");
@@ -100,7 +100,7 @@ describe("example to-do app", () => {
     deviceHelper.selectTags("Golf");
     deviceHelper.defineHeight("2", "True", "False");
     deviceHelper.enterPartNumber("part number");
-    // deviceHelper.selectStatus('Parent')
+    deviceHelper.selectStatus('Parent')
     deviceHelper.selectAirflow("Front to rear");
     deviceHelper.enterWeight(200);
     deviceHelper.weightUnit("Ounces");
@@ -121,7 +121,7 @@ describe("example to-do app", () => {
     deviceHelper.selectTags("Golf");
     deviceHelper.defineHeight("2", "True", "False");
     deviceHelper.enterPartNumber("part number");
-    // deviceHelper.selectStatus('Parent')
+    deviceHelper.selectStatus('Parent')
     deviceHelper.selectAirflow("Front to rear");
     deviceHelper.enterWeight(200);
     deviceHelper.weightUnit("Ounces");
