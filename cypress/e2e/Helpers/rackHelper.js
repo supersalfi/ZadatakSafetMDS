@@ -106,6 +106,12 @@ const rackHelper = {
     cy.get(`[data-value="${position}"]`).click();
   },
 
+  selectStatus(status){
+    cy.get(':nth-child(2) > .col > .ts-wrapper > .ts-control').type(status)
+    cy.get(`[data-value="${status}"]`).click();
+
+  },
+
   submitDevice(deviceName, assetTag) {
     cy.get(".btn-primary").click();
     cy.get(".toast-body").contains(

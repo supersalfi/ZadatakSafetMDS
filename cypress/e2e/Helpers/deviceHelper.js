@@ -95,42 +95,42 @@ const accountHelper = {
     }
 
     if (airFlow === "Rear to front") {
-        cy.get('#id_airflow-ts-control').click();
+      cy.get("#id_airflow-ts-control").click();
       cy.get(this.elements.rearToFront).click();
     }
 
     if (airFlow === "Left to right") {
-        cy.get('#id_airflow-ts-control').click();
+      cy.get("#id_airflow-ts-control").click();
       cy.get(this.elements.rearToFront).click();
     }
 
     if (airFlow === "Right to left") {
-        cy.get('#id_airflow-ts-control').click();
+      cy.get("#id_airflow-ts-control").click();
       cy.get(this.elements.rightToLeft).click();
     }
 
     if (airFlow === "Side to rear") {
-        cy.get('#id_airflow-ts-control').click();
+      cy.get("#id_airflow-ts-control").click();
       cy.get(this.elements.sideToRear).click();
     }
 
     if (airFlow === "Rear to side") {
-        cy.get('#id_airflow-ts-control').click();
+      cy.get("#id_airflow-ts-control").click();
       cy.get(this.elements.rearToSide).click();
     }
 
     if (airFlow === "Bottom to top") {
-        cy.get('#id_airflow-ts-control').click();
+      cy.get("#id_airflow-ts-control").click();
       cy.get(this.elements.bottomToTop).click();
     }
 
     if (airFlow === "Top to bottom") {
-        cy.get('#id_airflow-ts-control').click();
+      cy.get("#id_airflow-ts-control").click();
       cy.get(this.elements.topToBottom).click();
     }
 
     if (airFlow === "Passive") {
-      cy.get('#id_airflow-ts-control').click();
+      cy.get("#id_airflow-ts-control").click();
       cy.get(this.elements.passive).click();
     }
 
@@ -181,9 +181,36 @@ const accountHelper = {
     });
   },
 
-  verifyErrorMessage(){
-    cy.get('#id_model').should('have.class', "is-invalid")
-    cy.get(':nth-child(3) > .col > .invalid-feedback').contains('This field is required.')
+  verifyErrorMessage() {
+    cy.get("#id_model").should("have.class", "is-invalid");
+    cy.get(":nth-child(3) > .col > .invalid-feedback").contains(
+      "This field is required."
+    );
+  },
+
+  findDevicefromDeviceListandDeletedIt(deviceName) {
+    cy.get(".table")
+      .contains("td", deviceName)
+      .closest("tr")
+      .then(($row) => {
+        cy.wrap($row).find("td").eq(0).click();
+      });
+
+    cy.get(".btn-list > .btn-red").click();
+    cy.get(".btn-danger").click();
+    cy.get(".toast-body").contains("Deleted 1 devices");
+  },
+
+  FindDeviceFromDeviceListAndDeleteItFromDevicePage(deviceName) {
+    cy.get(".table")
+      .contains("td", deviceName)
+      .closest("tr")
+      .then(($row) => {
+        cy.wrap($row).find("td").eq(1).find("a").click();
+      });
+      cy.get('.btn-red').click()
+      cy.get('.btn-danger').click()
+      cy.get(".toast-body").contains("Deleted device " + deviceName);
   },
 };
 
