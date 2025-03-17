@@ -108,7 +108,7 @@ describe("example to-do app", () => {
     deviceHelper.submitDeviceAndVerifySuccess(model);
   });
 
-  it.only("create invalid device, edit error ans submit successfully", () => {
+  it("create invalid device, edit error ans submit successfully", () => {
     model = strings.randomString(5);
     slug = strings.randomString(7);
 

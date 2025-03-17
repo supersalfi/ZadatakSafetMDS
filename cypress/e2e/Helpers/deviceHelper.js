@@ -95,42 +95,42 @@ const accountHelper = {
     }
 
     if (airFlow === "Rear to front") {
-      cy.get(":nth-child(7) > .col > .ts-wrapper > .ts-control").click();
+        cy.get('#id_airflow-ts-control').click();
       cy.get(this.elements.rearToFront).click();
     }
 
     if (airFlow === "Left to right") {
-      cy.get(":nth-child(7) > .col > .ts-wrapper > .ts-control").click();
+        cy.get('#id_airflow-ts-control').click();
       cy.get(this.elements.rearToFront).click();
     }
 
     if (airFlow === "Right to left") {
-      cy.get(":nth-child(7) > .col > .ts-wrapper > .ts-control").click();
+        cy.get('#id_airflow-ts-control').click();
       cy.get(this.elements.rightToLeft).click();
     }
 
     if (airFlow === "Side to rear") {
-      cy.get(":nth-child(7) > .col > .ts-wrapper > .ts-control").click();
+        cy.get('#id_airflow-ts-control').click();
       cy.get(this.elements.sideToRear).click();
     }
 
     if (airFlow === "Rear to side") {
-      cy.get(":nth-child(7) > .col > .ts-wrapper > .ts-control").click();
+        cy.get('#id_airflow-ts-control').click();
       cy.get(this.elements.rearToSide).click();
     }
 
     if (airFlow === "Bottom to top") {
-      cy.get(":nth-child(7) > .col > .ts-wrapper > .ts-control").click();
+        cy.get('#id_airflow-ts-control').click();
       cy.get(this.elements.bottomToTop).click();
     }
 
     if (airFlow === "Top to bottom") {
-      cy.get(":nth-child(7) > .col > .ts-wrapper > .ts-control").click();
+        cy.get('#id_airflow-ts-control').click();
       cy.get(this.elements.topToBottom).click();
     }
 
     if (airFlow === "Passive") {
-      cy.get(":nth-child(7) > .col > .ts-wrapper > .ts-control").click();
+      cy.get('#id_airflow-ts-control').click();
       cy.get(this.elements.passive).click();
     }
 
